@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+    }
+    nav a:hover {
+      background: #1abc9c;
+    }
+    .container {
+      display: flex;
+      margin: 20px;
+    }
+    .sidebar {
+      width: 25%;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .main {
+      flex: 1;
+      margin-left: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #2c3e50;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin: 8px 0;
+      padding: 10px;
+      background: #ecf0f1;
+      border-radius: 5px;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    .login-box {
+      max-width: 400px;
+      margin: 100px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background: #16a085;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div class="login-box" id="login-page">
+    <h2>Student Login</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <!-- Portal Page -->
+  <div id="portal-page" style="display:none;">
+    <header>
+      <h1>Welcome to Student Portal</h1>
+    </header>
+
+    <nav>
+      <a href="#profile">Profile</a>
+      <a href="#courses">Courses</a>
+      <a href="#announcements">Announcements</a>
+      <a href="#results">Results</a>
+    </nav>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <h2>Student Info</h2>
+        <p><strong>Name:</strong> KOTHAMASU SHANMUKHA</p>
+        <p><strong>ID:</strong> 2343230232</p>
+        <p><strong>Email:</strong> kshanmukha2021@gmail.com</p>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main">
+        <section id="profile">
+          <h2>Profile</h2>
+          <p>Welcome to your student portal. You can view your details, courses, results, and announcements here.</p>
+        </section>
+
+        <section id="courses">
+          <h2>Enrolled Courses</h2>
+          <ul>
+            <li>python</li>
+            <li>web designing</li>
+            <li>Fods</li>
+            <li>PHP</li>
+            <li>chemistry</li>
+          </ul>
+        </section>
+
+        <section id="announcements">
+          <h2>Announcements</h2>
+          <ul>
+            <li>Midterm exams start from 15th September.</li>
+            <li>Submit assignments before 10th September.</li>
+            <li>New library books available.</li>
+          </ul>
+        </section>
+
+        <section id="results">
+          <h2>Exam Results</h2>
+          <ul>
+            <li>python: 85%</li>
+            <li>FOD: 92%</li>
+            <li>web technology: 78%</li>
+            <li>PHP: 88%</li>
+            <li>Chemistry: 88%</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Student Portal Demo</p>
+    </footer>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      if(username && password) {
+        document.getElementById('login-page').style.display = 'none';
+        document.getElementById('portal-page').style.display = 'block';
+      } else {
+        alert("Please enter username and password!");
+      }
+    }
+  </script>
+
+</body>
+</html>
